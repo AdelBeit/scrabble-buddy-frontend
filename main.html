@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Scrabble Buddy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link type="text/css" rel="stylesheet" href="/src/style/global.css" />
+    <script src="src/js/utils.js"></script>
+  </head>
+  <body class="max-w-[1000px] m-auto relative">
+    <main class="min-h-fit h-full overflow-y-scroll text-yellow-200">
+      <div class="px-2 laptop:px-12 flex flex-col gap-4">
+        <div class="heading pr-3 laptop:pr-0 pt-6">
+          <h1 class="text-3xl font-bold">Scrabble Buddy</h1>
+        </div>
+
+        <div
+          class="flex justify-between text-lg laptop:text-xl font-medium laptop:font-normal border border-red-400 mt-4 h-12">
+          <button
+            class="validate basis-1/2 [&[active]]:bg-fuchsia-700"
+            active>
+            Validate
+          </button>
+          <button class="search basis-1/2 [&[active]]:bg-fuchsia-700">
+            Search
+          </button>
+        </div>
+
+        <div class="validate-mode flex flex-col gap-4">
+          <h4 class="text-xl font-bold first-letter:capitalize">
+            check validity of the given words (separated by commas) and see
+            their definitions:
+          </h4>
+          <textarea
+            class="w-full border border-red-400 bg-purple-200 text-purple-950 p-1"
+            rows="8"
+            placeholder="tiger, table, etc..."></textarea>
+        </div>
+
+        <div class="search-mode flex flex-col gap-4 hidden">
+          <h4 class="text-xl font-bold first-letter:capitalize">
+            lookup a list of words containing the given letters:
+          </h4>
+          <textarea
+            class="w-full border border-red-400 bg-purple-200 text-purple-950 p-1"
+            rows="8"
+            placeholder="abcddd"></textarea>
+        </div>
+
+        <button
+          class="submit w-full h-12 bg-green-500 text-purple-950 font-bold laptop:font-medium capitalize"
+          type="submit">
+          submit
+        </button>
+
+        <div class="results-container flex flex-col">
+          <div
+            class="search-container search-mode template flex flex-wrap gap-2 w-full h-fit p-2 border border-orange-400 hidden">
+            <div
+              class="word-card template bg-purple-200 text-purple-950 rounded-lg p-1 px-2">
+              felt
+            </div>
+          </div>
+          <div
+            class="validate-container validate-mode template flex flex-col gap-2 w-full h-fit p-2 border border-orange-400 drop-shadow-lg">
+            <div
+              class="word-card template bg-purple-200 text-purple-950 w-full h-24 flex justify-between rounded-lg p-1 px-2 group">
+              <div class="flex flex-col">
+                <div class="flex gap-2 items-center">
+                  <p class="word text-xl font-semibold capitalize">word</p>
+                  <span class="type">(noun)</span>
+                </div>
+                <span class="definition capitalize">definition</span>
+              </div>
+              <span
+                class="group-[&[valid]]:text-green-500 group-[&[invalid]]:text-red-500 h-fit my-auto text-2xl font-bold uppercase">
+                <span class="group-[&[valid]]:hidden">in</span>valid
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="ditto w-0 h-0">
+          <img />
+        </div>
+      </div>
+    </main>
+    <script src="src/js/telemetry.js"></script>
+    <script src="src/js/main.js"></script>
+  </body>
+</html>

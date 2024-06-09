@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-black: "#000";
+  --color-white: "#fff";
+  --color-house-green: "#006241";
+  --color-dark-house-green: "#1E3932";
+  --color-accent-green: "#01A862";
+  --color-light-green: "#D4E9E2";
+  --color-gray: "#F7F7F7";
+  --color-dark-gray: "#6A6A6A";
+}
+
+body,
+html {
+  min-width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  background-image: radial-gradient(
+    800px circle at top left,
+    #6b17d8 0%,
+    #350772 100%
+  );
+}
